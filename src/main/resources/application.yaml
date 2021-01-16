@@ -1,3 +1,13 @@
 bot:
   name: TravelBot
   token: 1413344627:AAFKdVVT9y8BTDzAnmOnfwrOaufNIYNWL_w
+spring:
+  datasource:
+    url: jdbc:postgresql://ec2-54-170-109-0.eu-west-1.compute.amazonaws.com:5432/dfca64a0g7sbk0?user=tuwqmnhwcggref&password=eb7c32a751322f187c1b372f993bd327caf2fb824603ab93285d53fdd4068932
+    driver-class-name: org.postgresql.Driver
+    initialization-mode: never
+    jpa:
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+      show-sql: true
+      hibernate:
+        ddl-auto: update

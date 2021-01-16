@@ -10,42 +10,57 @@
 
     <properties>
         <java.version>14</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <maven.compiler.source>14</maven.compiler.source>
-        <maven.compiler.target>14</maven.compiler.target>
+        <!-- Spring -->
+        <spring-boot.version>2.2.4.RELEASE</spring-boot.version>
+
+        <!-- TelegramBots Spring Boot Starter -->
+        <telegrambots-spring.version>0.22</telegrambots-spring.version>
+
+        <!-- Hibernate -->
+        <hibernate.version>5.4.18.Final</hibernate.version>
+
+        <!--DB-->
+        <postgresql.version>42.2.14</postgresql.version>
+
     </properties>
 
     <dependencies>
+        <!-- Spring Boot -->
         <dependency>
-            <groupId>org.telegram</groupId>
-            <artifactId>telegrambots-spring-boot-starter</artifactId>
-            <version>5.0.1</version>
+            <groupId>com.github.xabgesagtx</groupId>
+            <artifactId>telegram-spring-boot-starter</artifactId>
+            <version>${telegrambots-spring.version}</version>
         </dependency>
 
+        <!-- Spring Boot Data JPA -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <version>2.4.1</version>
+            <version>${spring-boot.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>42.2.18</version>
-        </dependency>
-
-
+        <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.16</version>
+            <version>1.18.12</version>
             <scope>provided</scope>
         </dependency>
 
+        <!--DataBase-->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
+        </dependency>
     </dependencies>
 
+
     <build>
-        <finalName>TelegramTravelBot</finalName>
+        <finalName>TelegramNotifierBot</finalName>
         <defaultGoal>package</defaultGoal>
         <plugins>
             <plugin>
@@ -53,8 +68,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+                    <source>13</source>
+                    <target>13</target>
                 </configuration>
             </plugin>
         </plugins>
